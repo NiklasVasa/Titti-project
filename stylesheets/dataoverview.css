@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "VasakronanSerif–Rubrik";
+  src: url("../fonts/VasakronanSerif-Rubrik.eot?#iefix");
+  src: url("../fonts/VasakronanSerif-Rubrik.eot?#iefix") format("eot"),
+       url("../fonts/VasakronanSerif-Rubrik.woff2") format("woff2"),
+       url("../fonts/VasakronanSerif-Rubrik.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "apercu_medium";
+  src: url("../fonts/apercu_medium.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "apercu_light_000";
+  src: url("../fonts/apercu_light_000.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@media screen and (max-width:850px) {
+  .body {
+    width: 100%;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 12vh 80vh 8vh;
+  }
+}
+
+body {
+  font-family: "apercu_medium", sans-serif;
+  display: grid;
+  width: 100%;
+  position: fixed;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 12vh 80vh 8vh;
+  grid-template-areas:
+    "header header"
+    "menu powerbi"
+    "menu footer";
+}
+
+/* ====== DEN BLÅ HEADERN + INNEHÅLL ====== */
+header {
+  grid-area: header;
+  background: #0014CC;
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 40% 50%;
+  grid-template-rows: 90% 10%;
+  grid-template-areas:
+    "company-header search-header";
+}
+
+img#logo-symbol {
+  height: 70%;
+  grid-area: symbol;
+}
+
+h1 {
+  font-family: "VasakronanSerif–Rubrik", sans-serif;
+  font-size: 250%;
+  color: #FFFFFF;
+  margin: 5%;
+}
+
+div#company-header,
+div#search-header {
+  display: flex;
+  align-items: center;
+}
+
+#dispUserNameDiv {
+  font-size: 90%;
+  color: #F5F7F7;
+  text-align: center;
+}
+
+/**----------Design for search city-------**/
+div#search-header {
+  grid-area: search-header;
+  grid-gap: 0.5em;
+}
+
+input#city {
+  font-family: "apercu_medium";
+  border: none;
+  font-size: 16px;
+  padding: 0.5em;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+input#property {
+  font-family: "apercu_medium";
+  border: none;
+  font-size: 16px;
+  padding: 0.5em;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+/**----------Animation och design för search-button-------**/
+.search-button {
+  width: 15%;
+  grid-area: search-button;
+  font-family: "apercu_medium";
+  background-color: #FF5039;
+  border: none;
+  font-size: 16px;
+}
+
+.search-button span {
+  padding: 0.5em;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  font-family: "apercu_medium";
+  background-color: #FF5039;
+}
+
+.search-button span:after {
+  content: '\00bb';
+  position: absolute;
+  transition: 0.5s;
+  font-family: "apercu_medium";
+  cursor: pointer;
+  background-color: #FF5039;
+}
+
+.search-button:hover span {
+  padding-right: 25px;
+  font-family: "apercu_medium";
+  cursor: pointer;
+  background-color: #FF5039;
+}
+
+.search-button:hover span:after {
+  opacity: 1;
+  right: 0%;
+  font-family: "apercu_medium";
+  cursor: pointer;
+  background-color: #FF5039;
+}
+
+/**---------------------------------------------**/
+/* ====== MENYN  ====== */
+.menu {
+  text-align: center;
+  grid-area: menu;
+  background: #FFFFFF;
+  justify-content: space-between;
+  color: #000B3D;
+  grid-area: menu;
+}
+
+h2 {
+  margin-top: 5%;
+  font-size: 250%;
+}
+
+.menu ul li {
+  font-size: 150%;
+  margin: 1%;
+}
+
+/*--------- Design for parameter button-----------*/
+.parameterBtn {
+  font-family: "apercu_medium";
+  cursor: pointer;
+  border: none;
+  color: black;
+  background-color: #FFFFFF;
+  font-size: 100%;
+}
+
+.parameterBtn:hover,
+.parameterBtn:active {
+  border: none;
+  color: #FF5039;
+  cursor: pointer;
+}
+
+/*--------- Design for tillbaka button-----------*/
+.tillbaka {
+  display: flex;
+  margin: 20% 10%;
+  cursor: pointer;
+  border: none;
+  background-color: #F5F7F7;
+  font-size: 30px;
+  padding: 8px 18px;
+}
+
+/*------- Darker backgrund at hover --------*/
+.tillbaka:hover {
+  opacity: 0.6;
+  border: none;
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* ============ */
+/* ====== MICROSOFT POWER BI =======*/
+#PowerBI {
+  grid-area: powerbi;
+  display: flex;
+  z-index: 5;
+}
+
+/* 
+.powerbi { 
+  margin-top: 0;
+  grid-area: powerbi;
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: auto;
+}  */
+/* ============ */
+footer {
+  font-family: "apercu_medium", sans-serif;
+  background: #F5F7F7;
+  padding: 1%;
+  z-index: 2;
+}

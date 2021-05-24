@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Titti | BIM-viewer </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../stylesheets/reset.css">
+    <link rel="stylesheet" href="../stylesheets/BIMviewer.css">
+    <link rel="stylesheet" href="../stylesheets/authStyle.css">
+    <!-- Polyfill for IE 11 promise. More polyfills can be used if needed.-->
+    <!-- msal.min.js can be used in the place of msal.js; included msal.js to make debug easy -->
+    <script type="text/javascript" src="https://alcdn.msauth.net/lib/1.4.4/js/msal.js"
+        integrity="sha384-fTmwCjhRA6zShZq8Ow5ZkbWwmgp8En46qW6yWpNEkp37MkV50I/V2wjzlEkQ8eWD" crossorigin="anonymous">
+    </script>
+    <!-- msal.js with a fallback to backup CDN -->
+    <script type="text/javascript">
+        if (typeof Msal === 'undefined') document.write(unescape(
+            "%3Cscript src='https://alcdn.msftauth.net/lib/1.4.4/js/msal.js' type='text/javascript' %3E%3C/script%3E"
+            ));
+    </script>
+    <script type="module" src='../src/language/chooseLanguageBIMView.js'></script>
+    <script type="module" src="../src/searchOptions.js"></script>
+    <script type="module" src="../src/getDataProptech.js"></script>
+    <script type="module" src="../src/latestData.js"></script>
+    <script type="module" src="../dist/app.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div id="company-header">
+            <a href="../index.html"><img id="logo-symbol" src="../images/VK_Symbol_vit.png" alt="Vasakronan symbol"></a>
+            <h1>Titti</h1>
+        </div>
+
+        <div id="search-header">
+            <input type="text" name="city" id="city" placeholder="Sök stad" list="cityList">
+            <datalist id="cityList">
+                <!-- här läggs alla städer in genom javacript i searchOptions.js -->
+            </datalist>
+            <input type="text" name="property" id="property" placeholder="Sök byggnad" list="propertyList">
+            <datalist id="propertyList">
+                <!-- här läggs alla byggnader in genom javacript i searchOptions.js -->
+            </datalist>
+            <button onclick="location.href='../html/BIMviewer.html'" class="search-button"><span
+                    id="searchBtn">Sök</span></button>
+            <div id='loggedInDiv'>
+                <button type="button" id="signIn" class="btn btn-secondary" onclick="signIn()">Logga in</button>
+                <button type="button" id="signOut" class="btn btn-success d-none" onclick="signOut()"
+                    data-hover="Logga ut">
+                    <div id="dispUserNameDiv"></div>Logga ut
+                </button>
+            </div>
+
+    </header>
+
+    <div class="menu">
+        <h2>Skjutsgossen 8</h2>
+        <ul id="all-floors">
+            <!-- här läggs knapparna in genom typescript -->
+        </ul>
+        <button onclick="location.href='../html/dataoverview.html'" class="rapport"><span id="toReport">Till rapport
+            </span>&#8250;</button>
+        <button onclick="location.href='../../index.html'" a href="#" class="tillbaka">&#8249;</a></button>
+    </div>
+
+    <div class="sensorInfo">
+        <div class="viewerMenuHeading">
+            <h3 id='sensorListHeading'>Sensorlista</h3>
+            <div class="arrowDown"></div>
+            <!-- OBS: i app.ts när man byter våning skapas här en ul#sensorList med flera li.sensorListItem -->
+        </div>
+    </div>
+
+    <div class="values">
+        <button class="value temperature" id="tempButton"></button>
+        <button class="value koldioxid popupCO2" id="koldioxid">Koldioxid
+        </button>
+        <button class="value ovrigt popup" id="ovrigt">Övrigt
+        </button>
+    </div>
+
+    <div id="viewer-container"></div>
+
+    <div class="tempKey">
+        <div id="gradientTempViewDiv">
+            <h3 id="temperatureView"><span id="tempViewText">Teckenförklaring, temperatur i °C</span></h3>
+            <div id="gradientTemp"></div>
+        </div>
+        <form id='tempInterval'>
+            <h3 id='setIntervalHead'><span id='setIntervalText'>Välj temperaturintervall</span></h3>
+            <div id='formDiv'>
+                <div class='form-value'>
+                    <input name="minValField" id='minField' type='number' placeholder="Lägsta temperatur"></input>
+                    <input name="maxValField" id='maxField' type='number' placeholder="Högsta temperatur"></input>
+                </div>
+                <div class='form-submit'>
+                    <button id='subButton' type='button'>Välj eget temperaturintervall</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <footer>
+        <p>© Copyright Vasakronan AB</p>
+        <p id="kandFooter">Ett kandidatarbete av: Rebecca Fällström, Karolina Hagerman, Tilda Myrsell & Niklas Norinder
+            2021</p>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="../src/authentication/authConfig.js"></script>
+<script type="text/javascript" src="../src/authentication/loggedInChecker.js"></script>
+<script type="text/javascript" src="../src/authentication/authPopup.js"></script>
+
+</html>

@@ -1,0 +1,96 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Titti | BIM-viewer </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../stylesheets/reset.css">
+    <link rel="stylesheet" href="../stylesheets/dataoverview.css">
+    <link rel="stylesheet" href="../stylesheets/authStyle.css">
+    <!-- Polyfill for IE 11 promise. More polyfills can be used if needed.-->
+    <!-- msal.min.js can be used in the place of msal.js; included msal.js to make debug easy -->
+    <script type="text/javascript" src="https://alcdn.msauth.net/lib/1.4.4/js/msal.js"
+        integrity="sha384-fTmwCjhRA6zShZq8Ow5ZkbWwmgp8En46qW6yWpNEkp37MkV50I/V2wjzlEkQ8eWD" crossorigin="anonymous">
+    </script>
+    <!-- msal.js with a fallback to backup CDN -->
+    <script type="text/javascript">
+        if (typeof Msal === 'undefined') document.write(unescape(
+            "%3Cscript src='https://alcdn.msftauth.net/lib/1.4.4/js/msal.js' type='text/javascript' %3E%3C/script%3E"
+            ));
+    </script>
+    <script type="module" src='../src/language/chooseLanguageDataOverview.js'></script>
+    <script type="module" src="../src/searchOptions.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="company-header">
+            <a href="../index.html"><img id="logo-symbol" src="../images/VK_Symbol_vit.png" alt="Vasakronan symbol"></a>
+            <h1>Titti</h1>
+        </div>
+
+        <div id="search-header">
+            <input type="text" name="city" id="city" placeholder="Sök stad" list="cityList">
+            <datalist id="cityList">
+                <!-- här läggs alla städer in genom javacript i searchOptions.js -->
+            </datalist>
+            <input type="text" name="property" id="property" placeholder="Sök byggnad" list="propertyList">
+            <datalist id="propertyList">
+                <!-- här läggs alla byggnader in genom javacript i searchOptions.js -->
+            </datalist>
+            <button onclick="location.href='../html/BIMviewer.html'" class="search-button"><span
+                    id="searchBtn">Sök</span></button>
+            <div id='loggedInDiv'>
+                <button type="button" id="signIn" class="btn btn-secondary" onclick="signIn()">Logga in</button>
+                <button type="button" id="signOut" class="btn btn-success d-none" onclick="signOut()"
+                    data-hover="Logga ut">
+                    <div id="dispUserNameDiv"></div>
+                </button>
+            </div>
+
+    </header>
+
+    <div class="menu">
+        <h2 id="parametrar"> Parametrar</h2>
+        <ul id="all-parameters">
+            <!-- här ska olika parametrar (temp, koldioxid osv.) läggas in genom typescript senare. Just nu endast enkel lista -->
+            <li class='parameterBtn'><button class="parameterBtn"><span
+                        id="temperatur">Temperatur</span>&#8250;</button></li>
+            <li class='parameterBtn'><button class="parameterBtn"></button><span
+                    id="koldioxid">Koldioxid</span>&#8250;</button></li>
+        </ul>
+        <button onclick="location.href='BIMviewer.html'" a href="#" class="tillbaka">&#8249;</a></button>
+    </div>
+
+    <div class='powerbi'>
+        <div id="PowerBI">
+            <iframe width="1200" height="800"
+                src="https://app.powerbi.com/reportEmbed?reportId=632e0c2a-0787-4f3f-80a7-0d282e3861f1&autoAuth=true&ctid=dd7191f1-e8a3-40e9-a842-7857b1aadee7&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9"
+                frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+    </div>
+    <footer>
+        <p>© Copyright Vasakronan AB</p>
+        <p id='kandFooter'>Ett kandidatarbete av: Rebecca Fällström, Karolina Hagerman, Tilda Myrsell & Niklas Norinder
+            2021
+    </footer>
+
+</body>
+
+
+<!-- importing bootstrap.js and supporting js libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="../src/authentication/authConfig.js"></script>
+<script type="text/javascript" src="../src/authentication/loggedInChecker.js"></script>
+<script type="text/javascript" src="../src/authentication/authPopup.js"></script>
+
+
+</html>

@@ -1,0 +1,191 @@
+@media (prefers-reduced-motion:reduce) {
+	.btn {
+		transition: none
+	}
+}
+
+@font-face {
+	font-family: "apercu_medium";
+	src: url("../fonts/apercu_medium.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+.btn {
+	margin: 0 10%;
+	font-family: "apercu_medium";
+	font-size: 14px;
+	cursor: pointer;
+	border: none;
+	background-color: #F5F7F7;
+	position: relative;
+	transition: 0.5s;
+	width: 120%;
+	justify-content: center;
+	transition-duration: 0.4s;
+	text-align: center;
+	display: flex;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.btn:hover {
+	color: #F5F7F7;
+	text-decoration: none;
+}
+
+.btn.focus,
+.btn:focus {
+	outline: 0;
+	box-shadow: 0 0 0 .2rem rgba(62, 63, 63, 0.25)
+}
+
+.btn.disabled,
+.btn:disabled {
+	opacity: .65
+}
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+	pointer-events: none
+}
+
+.btn-secondary {
+	color: #F5F7F7;
+	background-color: #0014CC;
+	border-color: #0014CC
+}
+
+.btn-secondary:hover {
+	color: (0, 20, 204, .8);
+	background-color: (0, 20, 204, .4);
+	border-color: (0, 20, 204, .8);
+	opacity: 60%;
+}
+
+.btn-secondary.focus,
+.btn-secondary:focus {
+	color: #fff;
+	background-color: #C3F0C8;
+	border-color: #C3F0C8;
+	box-shadow: 0 0 0 .2rem rgba(130, 138, 145, .5)
+}
+
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+	color: #0014CC;
+	background-color: #F5F7F7;
+	border-color: #F5F7F7
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+	color: #0014CC;
+	background-color: #F5F7F7;
+	border-color: #F5F7F7
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-secondary.dropdown-toggle:focus {
+	box-shadow: 0 0 0 .2rem rgba(130, 138, 145, .5)
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #0014CC;
+	border-color: #0014CC;
+}
+
+.btn-success:hover {
+	color: #fff;
+	background-color: #0014CC;
+	border-color: #0014CC;
+	font-size: 0;
+}
+
+.btn-success:hover:after {
+	content: attr(data-hover);
+	color: #fff;
+	opacity: 0.6;
+	font-size: 14px;
+	width: 100%;
+	justify-content: center;
+	text-align: center;
+}
+
+.btn-success.focus,
+.btn-success:focus {
+	color: #fff;
+	background-color: #218838;
+	border-color: #1e7e34;
+	box-shadow: 0 0 0 .2rem rgba(72, 180, 97, .5)
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+	color: #fff;
+	background-color: #28a745;
+	border-color: #28a745
+}
+
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show>.btn-success.dropdown-toggle {
+	color: #fff;
+	background-color: #1e7e34;
+	border-color: #1c7430
+}
+
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.show>.btn-success.dropdown-toggle:focus {
+	box-shadow: 0 0 0 .2rem rgba(72, 180, 97, .5)
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+	padding: .5rem 1rem;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	border-radius: .3rem
+}
+
+.btn-group-sm>.btn,
+.btn-sm {
+	padding: .25rem .5rem;
+	font-size: .875rem;
+	line-height: 1.5;
+	border-radius: .2rem
+}
+
+.dropleft {
+	position: relative
+}
+
+.d-none {
+	display: none !important
+}
+
+.ml-auto,
+.mx-auto {
+	margin-left: auto !important
+}
+
+/* Setting responsivity */
+@media screen and (max-width: 1200px) {
+	.btn {
+		font-size: small;
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	.btn {
+		font-size: x-small;
+	}
+}

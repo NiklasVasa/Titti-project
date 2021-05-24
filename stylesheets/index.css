@@ -1,0 +1,224 @@
+@font-face {
+    font-family: "VasakronanSerif–Rubrik";
+    src: url("../fonts/VasakronanSerif-Rubrik.eot?#iefix");
+    src: url("../fonts/VasakronanSerif-Rubrik.eot?#iefix") format("eot"),
+         url("../fonts/VasakronanSerif-Rubrik.woff2") format("woff2"),
+         url("../fonts/VasakronanSerif-Rubrik.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_medium";
+    src: url("../fonts/apercu_medium.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_regular";
+    src: url("../fonts/apercu_regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media screen and (max-width:850px) {
+    .body {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 90% 10%;
+    }
+}
+
+body {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 90% 10%;
+    grid-template-areas:
+        "menu BIM-viewer"
+        "menu footer";
+}
+
+.menu,
+div#search-menu,
+div#BIM-viewer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/* =============== MENYDELEN ============= */
+.menu {
+    grid-area: menu;
+    background: #FFFFFF;
+    justify-content: space-between;
+}
+
+div#search-menu {
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    flex-wrap: wrap;
+}
+
+div#lang-menu {
+    height: 30%;
+}
+
+#log-in-menu {
+    margin: 0 71%;
+    width: 20%;
+    height: 50%;
+}
+
+#dispUserNameDiv {
+    margin: 0 11%;
+    width: 100%;
+    height: 50%;
+    font-family: "apercu_regular";
+    src: url("../fonts/apercu_regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: bold;
+}
+
+img#logo {
+    grid-area: logo;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.search {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0.5em;
+    grid-template-areas:
+        "search-city search-property"
+        "search-button search-button";
+}
+
+/**----------Animation och design för search-button-------**/
+.search-box {
+    padding: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    font-family: "apercu_medium";
+    cursor: pointer;
+}
+
+.search-button span {
+    padding: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.search-button span:after {
+    content: '\00bb';
+    position: absolute;
+    right: -20x;
+    transition: 0.5s;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.search-button:hover span {
+    padding-right: 25px;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.search-button:hover span:after {
+    opacity: 1;
+    right: 0%;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.search-button {
+    grid-area: search-button;
+    font-family: "apercu_medium";
+    background-color: #FF5039;
+    border: none;
+    font-size: 16px;
+}
+
+/**----------Design för search-city-------**/
+
+/**-------------In english button---------------**/
+.change-lang-button {
+    display: flex;
+    margin: 0 10%;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    border: none;
+    background-color: #FFFFFF;
+    font-size: 14px;
+}
+
+.change-lang-button:hover {
+    opacity: 0.6;
+    border: none;
+}
+
+
+/* ============= VERKTYGETS NAMN-DELEN =========== */
+div#BIM-viewer {
+    grid-area: BIM-viewer;
+    background: URL('https://wwwvasakronanse.cdn.triggerfish.cloud/uploads/2019/10/vasakronan_sergelhuset_sveavagen_handelsstrak-scaled.jpg');
+    font-family: "VasakronanSerif–Rubrik", sans-serif;
+    padding: 0 0 5% 5%;
+    display: flexbox;
+    flex-direction: column-reverse;
+    background-size: 140%;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 300%;
+}
+
+.thickness {
+    color: #FFFFFF;
+    display: inline-block;
+    margin-bottom: 2%;
+    padding-bottom: 7px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: fit-content;
+    font-family: "apercu_regular";
+}
+
+/* ============ */
+
+footer {
+    grid-area: footer;
+    background: #F5F7F7;
+    font-family: "apercu_medium", sans-serif;
+    padding: 2%;
+}
+
+/* Setting responsivity */
+@media screen and (max-width: 1150px) {
+    div#BIM-viewer {
+        grid-area: BIM-viewer;
+        background: URL('https://wwwvasakronanse.cdn.triggerfish.cloud/uploads/2019/10/vasakronan_sergelhuset_sveavagen_handelsstrak-scaled.jpg');
+        font-family: "VasakronanSerif–Rubrik", sans-serif;
+        padding: 0 0 5% 5%;
+        display: flexbox;
+        flex-direction: column-reverse;
+        background-size: 180%;
+    }
+
+}

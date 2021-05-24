@@ -1,0 +1,203 @@
+@font-face {
+    font-family: "Sergelstan-CondensedExtraLight";
+    src:          url("../fonts/Sergelstan-CondensedExtraLight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-BasicExtraLight";
+    src:          url("../fonts/Sergelstan-BasicExtraLight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-NarrowExtraLight";
+    src:          url("../fonts/Sergelstan-NarrowExtraLight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_light_italic";
+    src:          url("../fonts/apercu_light_italic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "apercu_light_000";
+    src:          url("../fonts/apercu_light_000.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-CondensedLight";
+    src:          url("../fonts/Sergelstan-CondensedLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-NarrowLight";
+    src:          url("../fonts/Sergelstan-NarrowLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-NarrowLight";
+    src:          url("../fonts/Sergelstan-NarrowLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-BasicLight";
+    src:          url("../fonts/Sergelstan-BasicLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "VasakronanSerif-Text";
+    src:     url("../fonts/VasakronanSerif-Text.eot?#iefix");
+    src: url("../fonts/VasakronanSerif-Text.eot?#iefix") format("eot"),
+         url("../fonts/VasakronanSerif-Text.woff2") format("woff2"),
+         url("../fonts/VasakronanSerif-Text.woff") format("woff"),
+         url("../fonts/VasakronanSerif-Text.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_regular_italic";
+    src:          url("../fonts/apercu_regular_italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "apercu_medium_italic";
+    src:          url("../fonts/apercu_medium_italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "apercu_medium";
+    src:          url("../fonts/apercu_medium.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_regular";
+    src:          url("../fonts/apercu_regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-BasicMedium";
+    src:          url("../fonts/Sergelstan-BasicMedium.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-CondensedMedium";
+    src:          url("../fonts/Sergelstan-CondensedMedium.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-NarrowRegular";
+    src:          url("../fonts/Sergelstan-NarrowRegular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-NarrowMedium";
+    src:          url("../fonts/Sergelstan-NarrowMedium.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SergelgatanScript-Regular";
+    src:          url("../fonts/SergelgatanScript-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-BasicRegular";
+    src:          url("../fonts/Sergelstan-BasicRegular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-NarrowMedium";
+    src:          url("../fonts/Sergelstan-NarrowMedium.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-CondensedRegular";
+    src:          url("../fonts/Sergelstan-CondensedRegular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "VasakronanSerif–Rubrik";
+    src:     url("../fonts/VasakronanSerif-Rubrik.eot?#iefix");
+    src: url("../fonts/VasakronanSerif-Rubrik.eot?#iefix") format("eot"),
+         url("../fonts/VasakronanSerif-Rubrik.woff2") format("woff2"),
+         url("../fonts/VasakronanSerif-Rubrik.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_bold_italic";
+    src:          url("../fonts/apercu_bold_italic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "apercu_bold";
+    src:          url("../fonts/apercu_bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-BasicBold";
+    src:          url("../fonts/Sergelstan-BasicBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-NarrowBold";
+    src:          url("../fonts/Sergelstan-NarrowBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sergelstan-CondensedBold";
+    src:          url("../fonts/Sergelstan-CondensedBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+

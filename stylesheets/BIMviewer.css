@@ -1,0 +1,687 @@
+@font-face {
+    font-family: "VasakronanSerif–Rubrik";
+    src: url("../fonts/VasakronanSerif-Rubrik.eot?#iefix");
+    src: url("../fonts/VasakronanSerif-Rubrik.eot?#iefix") format("eot"),
+         url("../fonts/VasakronanSerif-Rubrik.woff2") format("woff2"),
+         url("../fonts/VasakronanSerif-Rubrik.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_medium";
+    src: url("../fonts/apercu_medium.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "apercu_light_000";
+    src: url("../fonts/apercu_light_000.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@media screen and (max-width:850px) {
+    .body {
+        width: 100%;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 12vh 80vh 8vh;
+    }
+}
+
+body {
+    font-family: "apercu_medium", sans-serif;
+    display: grid;
+    width: 100%;
+    position: fixed;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 12vh 80vh 8vh;
+    grid-template-areas:
+        "header header"
+        "menu viewer-container"
+        "menu footer";
+}
+
+/* ====== DEN BLÅ HEADERN + INNEHÅLL ====== */
+header {
+    grid-area: header;
+    background: #0014CC;
+    padding: 1%;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    grid-template-rows: 90% 10%;
+    grid-template-areas:
+        "company-header search-header";
+}
+
+img#logo-symbol {
+    height: 70%;
+    grid-area: symbol;
+}
+
+h1 {
+    font-family: "VasakronanSerif–Rubrik", sans-serif;
+    font-size: 250%;
+    color: #FFFFFF;
+    margin: 5%;
+}
+
+div#company-header,
+div#search-header {
+    display: flex;
+    align-items: center;
+}
+
+#dispUserNameDiv {
+    font-size: 90%;
+    color: #F5F7F7;
+    text-align: center;
+}
+
+/**----------Design for search city-------**/
+div#search-header {
+    grid-area: search-header;
+    grid-gap: 0.5em;
+}
+
+input#city {
+    font-family: "apercu_medium";
+    border: none;
+    font-size: 16px;
+    padding: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+input#property {
+    font-family: "apercu_medium";
+    border: none;
+    font-size: 16px;
+    padding: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+/**----------Animation och design för search-button-------**/
+.search-button {
+    width: 15%;
+    grid-area: search-button;
+    font-family: "apercu_medium";
+    background-color: #FF5039;
+    border: none;
+    font-size: 16px;
+}
+
+.search-button span {
+    padding: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    font-family: "apercu_medium";
+    background-color: #FF5039;
+}
+
+.search-button span:after {
+    content: '\00bb';
+    position: absolute;
+    transition: 0.5s;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.search-button:hover span {
+    padding-right: 25px;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.search-button:hover span:after {
+    opacity: 1;
+    right: 0%;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+/**---------------------------------------------**/
+/* ====== VÅNINGSMENYN ====== */
+.floorBtn {
+    font-family: "apercu_medium";
+    cursor: pointer;
+    border: none;
+    background-color: #FFFFFF;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+.floorBtn:hover,
+.floorBtn:active {
+    border: none;
+    color: #FF5039;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu {
+    text-align: center;
+    grid-area: menu;
+    background: #FFFFFF;
+    justify-content: space-between;
+    color: #000B3D;
+    grid-area: menu;
+}
+
+h2 {
+    margin-top: 5%;
+    font-size: 250%;
+}
+
+.menu ul li {
+    font-size: 150%;
+    margin: 1%;
+}
+
+/*--------- Animation and Design for rapport button-----------*/
+.rapport {
+    margin: 3%;
+    font-family: "apercu_medium";
+    background-color: #FF5039;
+    border: none;
+    color: white;
+    padding: 2%;
+    cursor: pointer;
+    font-size: 100%;
+}
+
+.rapport span {
+    padding: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.rapport span:after {
+    position: absolute;
+    right: -20x;
+    transition: 0.5s;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.rapport:hover span {
+    padding-right: 25px;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+.rapport:hover span:after {
+    opacity: 1;
+    right: 0%;
+    font-family: "apercu_medium";
+    cursor: pointer;
+    background-color: #FF5039;
+}
+
+/*------- Darker backgrund at hover --------*/
+.rapport:hover {
+    opacity: 0.6;
+    border: none;
+}
+
+/* ============ */
+/*--------- Design for tillbaka button-----------*/
+.tillbaka {
+    display: flex;
+    margin: 20% 10%;
+    cursor: pointer;
+    border: none;
+    background-color: #F5F7F7;
+    font-size: 30px;
+    padding: 8px 18px;
+}
+
+/*------- Darker backgrund at hover --------*/
+.tillbaka:hover {
+    opacity: 0.6;
+    border: none;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+/* ============ */
+
+
+/* ====== VIEWERN ====== */
+div#viewer-container {
+    grid-area: viewer-container;
+    z-index: 1;
+    display: flex;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.tempKey {
+    margin-top: auto;
+    grid-area: viewer-container;
+    display: flex;
+    align-items: center;
+    align-items: flex-end;
+    min-height: 10%;
+    min-width: 62%;
+
+    background-color: rgba(255, 255, 255, .4);
+    z-index: 5;
+    transition-duration: 0.4s;
+
+    /* justify-content: start; */
+    padding: 1rem;
+    width: 58%;
+    height: 6%;
+}
+
+.tempKey:hover {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+#tempInterval {
+    z-index: 5;
+    display: grid;
+    grid-template-rows: 2;
+    padding-left: 3%;
+    height: 70%;
+}
+
+#formDiv {
+    display: flex;
+    justify-content: left;
+}
+
+#setIntervalHead {
+    z-index: 5;
+    color: rgb(75, 80, 70);
+    padding-bottom: 1%;
+    padding-left: 3%;
+}
+
+.form-value {
+    display: flex;
+    padding-left: 3%;
+    font-family: "apercu_medium";
+}
+
+#subButton {
+    width: 150%;
+    height: 100%;
+    padding-left: 2%;
+    text-align: center;
+    justify-content: center;
+    font-family: "apercu_medium";
+    background-color: #FF5039;
+    border: none;
+    cursor: pointer;
+    font-size: x-small;
+}
+
+input#maxField,
+input#minField {
+    font-family: "apercu_medium";
+    border: none;
+    font-size: x-small;
+    padding: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+#subButton:hover {
+    opacity: 0.6;
+    border: none;
+    background-color: #000B3D;
+    color: #F5F7F7;
+}
+
+#gradientTempViewDiv {
+    z-index: 5;
+    height: 70%;
+}
+
+#temperatureView {
+    color: rgb(75, 80, 70);
+    z-index: 5;
+    padding-bottom: 1%;
+}
+
+#gradientTemp {
+    z-index: 5;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 7;
+    grid-template-rows: 1;
+}
+
+.colorDisp {
+    width: auto;
+    min-width: 1.8rem;
+    color: rgb(232, 235, 229);
+    text-align: center;
+    font-size: x-small;
+    padding: 0.3rem;
+}
+
+#tempColor0 {
+    grid-column: 1;
+    background-color: rgb(0, 20, 204);
+}
+
+#tempColor1 {
+    grid-column: 2;
+    /*background-color: rgb(123, 227, 130); */
+    background-color: rgb(135, 221, 141);
+}
+
+#tempColor2 {
+    grid-column: 3;
+    /*background-color: rgb(38, 204, 0); */
+    background-color: rgb(131, 214, 136);
+}
+
+#tempColor3 {
+    grid-column: 4;
+    /* background-color: rgb(34, 182, 0);     */
+    background-color: rgb(126, 207, 131);
+}
+
+#tempColor4 {
+    grid-column: 5;
+    /* background-color: rgb(0, 156, 26);   */
+    background-color: rgb(120, 196, 125);
+}
+
+#tempColor5 {
+    grid-column: 6;
+    /* background-color: rgb(46, 116, 43);   */
+    background-color: rgb(114, 186, 118);
+}
+
+#tempColor6 {
+    grid-column: 7;
+    /* background-color: rgb(206, 35, 39);  */
+    background-color: rgb(255, 80, 57);
+}
+
+.sensorInfo {
+    grid-area: viewer-container;
+    width: 25%;
+    min-width: 6rem;
+    font-size: small;
+    font-family: "apercu_light_000";
+    grid-template-rows: 2;
+}
+
+.arrowDown {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid black;
+    transform: scale(0.3, 0.6);
+    visibility: hidden;
+    transition-duration: 0.8s;
+}
+
+ul#sensorList,
+.viewerMenuHeading {
+    background-color: rgba(255, 255, 255, .6);
+    padding: 0.5rem;
+    position: relative;
+    z-index: 2;
+    height: auto;
+    max-height: 50%;
+    overflow-y: auto;
+}
+
+#sensorList::-webkit-scrollbar {
+    display: none;
+}
+
+.viewerMenuHeading {
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    visibility: visible;
+    position: relative;
+    transition-duration: 0.4s;
+}
+
+ul#sensorList {
+    grid-row: 2;
+    margin-left: 1rem;
+
+}
+
+.hideTemp {
+    visibility: hidden;
+}
+
+.showTemp {
+    visibility: visible;
+}
+
+.viewerMenuHeading:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255);
+}
+
+.viewerMenuHeading:hover .arrowDown {
+    visibility: visible;
+}
+
+.tooHot {
+    color: rgb(206, 35, 39);
+    font-weight: bold;
+}
+
+.tooCold {
+    color: rgb(0, 20, 204);
+    font-weight: bold;
+}
+
+.newLineSensList {
+    padding-left: 15%;
+    /* padding-top: 1%;
+    padding-bottom: 4%; */
+}
+
+.clickedRoom {
+    background-color: rgba(245, 233, 131, .8);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.clickedRoomBtn {
+    animation-name: blink;
+    animation-duration: .3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: initial;
+    animation-direction: reverse;
+}
+
+.values {
+    grid-area: viewer-container;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.value {
+    z-index: 2;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 80%;
+    margin: 1.5em 3em 1.5em 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    min-width: 10%;
+    min-height: 15%;
+    max-width: 10%;
+    font-family: "apercu_medium";
+    z-index: 2;
+}
+
+.temperature {
+    background-color: #000B3D;
+    color: #FFFFFF;
+}
+
+.temperature:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 2px solid #000B3D;
+}
+
+.koldioxid {
+    background-color: #C3F0C8;
+    color: #000000;
+}
+
+.koldioxid:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 2px solid #C3F0C8;
+}
+
+.koldioxid:hover #myPopupCO2 {
+    visibility: visible;
+}
+
+.ovrigt {
+    background-color: #FF5039;
+    color: #FFFFFF;
+}
+
+.ovrigt:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 2px solid #FF5039;
+}
+
+.koldioxid:hover #myPopupOther {
+    visibility: visible;
+}
+
+.popupCO2 {
+    position: relative;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popupCO2 .popuptextCO2 {
+    visibility: visible;
+    background-color: rgb(255, 255, 255);
+    color: #555;
+    text-align: center;
+    border-radius: 6px;
+    border-color: rgb(131, 130, 130);
+    padding: 1rem 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -5rem;
+    opacity: 0.95;
+    font-size: small;
+}
+
+/* Popup arrow */
+.popupCO2 .popuptextCO2::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 0.7rem solid rgb(255, 255, 255);
+}
+
+#myPopupCO2 {
+    visibility: hidden;
+}
+
+#myPopupOther {
+    visibility: hidden;
+}
+
+/* ============ */
+
+/* ====== FOOTER ====== */
+footer {
+    grid-area: footer;
+    font-family: "apercu_medium", sans-serif;
+    background: #F5F7F7;
+    padding: 1%;
+}
+
+/* Setting responsivity */
+@media screen and (max-width: 1200px) {
+    .menu {
+        font-size: 80%;
+    }
+
+    .value {
+        font-size: 60%;
+    }
+
+    #dispUserNameDiv {
+        font-size: small;
+    }
+
+    .tempKey {
+        min-height: 13%;
+        min-width: 80%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .menu {
+        font-size: 80%;
+    }
+
+    .value {
+        font-size: 60%;
+    }
+
+    #dispUserNameDiv {
+        font-size: small;
+    }
+
+    .tempKey {
+        min-height: 13%;
+        min-width: 100%;
+    }
+}
