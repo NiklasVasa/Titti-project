@@ -1,7 +1,7 @@
 const msalConfig = {
     auth: {
-        clientId: "861a8b77-0916-4f84-9e08-c81fe1273510",
-        authority: "https://login.microsoftonline.com/d4218456-670f-42ad-9f6a-885ae15b6645/",
+        clientId: "---",
+        authority: "https://login.microsoftonline.com/---/",
         redirectUri: "https://vasakronanone2one.me:443/",
     },
     cache: {
