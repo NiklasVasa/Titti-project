@@ -17,6 +17,8 @@ Written with guidance from Georgios Fakas and Georgios Panayiotou.
 
 - ```./index.html``` the index-page.
 
+- ```./certs/``` where the certificates for the SSL are located.
+
 - ```./SQL/``` operations and connection to the SQL database.
 
 - ```./data/``` contains a .json file of all the sensors and the PBI-files.
