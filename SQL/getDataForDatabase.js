@@ -7,6 +7,7 @@ const agent = new https.Agent({
 const sqlConnection = require('./sqlConnection.js');
 
 //Loggar in från Server-sidan för att initiera client credential flow 
+//Logging on Server-side to initiate client credential flow
 function signIn() {
     console.log('in signin');
     fetch('https://vasakronanone2one.me' + '/login', {
@@ -26,6 +27,7 @@ function signIn() {
 }
 
 //En kort funktion som kollar om vi faktiskt har fått ett auth-token, och isf så kärs fetchIt som hämtar datan från ProptechOS.
+//Short function checking if we've successfully gotten the auth-token.
 function getData(token) {
     if (token != null) {
         console.log('Successfully got access token! :-)')
@@ -37,8 +39,9 @@ function getData(token) {
 
 //Här hämtas datan. Kollar hur många våningar byggnaden har genom json-filen och skickar sedan in det i generateSensorUrl
 //för att skapa de URL-er som kopplas till de olika sensorerna. 
-//Egentligen ska dagens datum, samt det sista datumet i databasen hämtas och skickas in i generateSensorUrl, så att 
-//databasen successivt fylls på med nya mätvärden, det är nästa utmaning!
+
+//Here the data from the API is collected. The number of floors is calculated from the json-file and then used in generateSensorUrl
+//to get the URLs for the sensors.
 function fetchIt(token) {
     let startTime = null;
     let i = 0;
@@ -56,6 +59,8 @@ function fetchIt(token) {
     //Här sker den inkrementella uppdateringen av SQL-databasen. Den körs var 10-minut, lika ofta som sensorerna uppdateras i ProptechOS.
     //Varje sensor får 3 sekunder på sig att hämta data, vilket förhoppningsvis inte kommer vara ett problem vid större datahämtning, alternativt kan den
     //ändras till ett större tal då. Det är siffran på rad 69.
+    
+    //Here the incremental updating of the SQL-database is done. This function runs every 10-minutes. 
     setInterval(function () {
         sqlConnection.getObsTime(query, function (result) {
             startTime = result.toISOString().split(' ').join().replace(':', '%3A').replace(':', '%3A').slice(0, -5);
@@ -74,7 +79,6 @@ function fetchIt(token) {
 //Funktion som tar in ett sensorId och returnerar sensorUrl som används för att kalla på Proptech. 
 //Den skiljer sig lite från den som kallas från client-sidan, då denna har en startTime och endTime. Vilket gör det möjligt att 
 //hämta data som samlats under en längre tidsperiod och inte bara punktvis. 
-//I denna funktion så kommer datan sparas ner till databasen???
 function generateSensorUrl(numberOfFloors, startTime) {
     let sensorIds = getSensorIds(numberOfFloors)[0];
     let endTime = new Date(Date.now()).toISOString().split(' ').join().replace(':', '%3A').replace(':', '%3A').slice(0, -5);
