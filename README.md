@@ -56,7 +56,7 @@ made with help from the one and only Erik Holm @ SWECO.
 
 also we have been all over StackOverflow.
 
-## THANKS
+## SPECIAL THANKS TO
  - Ulf Näslund 
  - Mathias Hellqvist 
  - Erik Holm 
